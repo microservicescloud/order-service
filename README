@@ -1,0 +1,8 @@
+_Test load balance ribbon
+To check how this is performing, we establish a pause of 10 milliseconds to the server listening on port 8001,
+ and 300 milliseconds to the server listening on port 8000 using the call /time/{time} of service countries-service
+Assuming that we are working on Linux, we can use the following Bash code to generate 100 requests.
+    COUNTER=0; while [$COUNTER -lt 100]; do
+        curl http://localhost:8100/es
+        let COUNTER=COUNTER+1
+    done
